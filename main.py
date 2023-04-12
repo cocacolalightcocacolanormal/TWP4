@@ -4,7 +4,7 @@ import random
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-# Liste de couleurs prédéfinies de la librairie Arcade
+# On liste les couleurs de la librairie arcade
 COLORS = [arcade.color.RED, arcade.color.ORANGE, arcade.color.YELLOW, arcade.color.GREEN, arcade.color.BLUE, arcade.color.PURPLE, arcade.color.PINK]
 
 
@@ -18,11 +18,11 @@ class Balle:
         self.color = color
 
     def update(self):
-        # Mise à jour de la position de la balle
+        # On change la position de la balle
         self.x += self.change_x
         self.y += self.change_y
 
-        # Vérification pour éviter que la balle ne sorte de l'écran
+        #Ici, on s'assure que la bolle ne sort pas de l'écran
         if self.x < self.rayon:
             self.x = self.rayon
             self.change_x *= -1
@@ -37,7 +37,7 @@ class Balle:
             self.change_y *= -1
 
     def draw(self):
-        # Dessin de la balle à l'écran
+        # On dessine la balle sur l´écran
         arcade.draw_circle_filled(self.x, self.y, self.rayon, self.color)
 
 
@@ -53,11 +53,11 @@ class Rectangle:
         self.angle = angle
 
     def update(self):
-        # Mise à jour de la position du rectangle
+        # On change la position du rectangle
         self.x += self.change_x
         self.y += self.change_y
 
-        # Vérification pour éviter que le rectangle ne sorte de l'écran
+        # Ici, on s´assure que le rectangle ne sort pas de l´écran
         if self.x < 0:
             self.x = 0
             self.change_x *= -1
@@ -72,7 +72,7 @@ class Rectangle:
             self.change_y *= -1
 
     def draw(self):
-        # Dessin du rectangle à l'écran
+        # On dessine le rectangle sur l´écran
         arcade.draw_rectangle_filled(self.x, self.y, self.width, self.height, self.color, self.angle)
 
 
